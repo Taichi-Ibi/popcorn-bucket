@@ -1,0 +1,5 @@
+ID | Title                  | Status  | Priority | Due Date  
+-------------------------------------------------------------
+1  | CLI Test Task          | pending | high     | 2025-12-31
+2  | Fix authentication bug | pending | high     | 2025-12-31
+3  | Fix authentication bug | pending | high     | 2025-12-31
