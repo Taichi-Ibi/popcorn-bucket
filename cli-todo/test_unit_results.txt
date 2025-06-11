@@ -1,0 +1,37 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.1, pytest-8.4.0, pluggy-1.6.0 -- /home/codespace/.python/current/bin/python
+cachedir: .pytest_cache
+rootdir: /workspaces/popcorn-bucket/cli-todo
+plugins: anyio-4.9.0, cov-6.1.1
+collecting ... collected 12 items / 2 errors
+
+==================================== ERRORS ====================================
+_____________ ERROR collecting tests/unit/test_task_repository.py ______________
+ImportError while importing test module '/workspaces/popcorn-bucket/cli-todo/tests/unit/test_task_repository.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/python/3.12.1/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/unit/test_task_repository.py:5: in <module>
+    from src.repositories.task_repository import JsonTaskRepository
+src/repositories/task_repository.py:4: in <module>
+    from result_types.result_types import TaskResult, TaskListResult
+E   ModuleNotFoundError: No module named 'result_types'
+______________ ERROR collecting tests/unit/test_task_validator.py ______________
+ImportError while importing test module '/workspaces/popcorn-bucket/cli-todo/tests/unit/test_task_validator.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/python/3.12.1/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/unit/test_task_validator.py:2: in <module>
+    from src.validators.task_validator import (
+src/validators/task_validator.py:1: in <module>
+    from result_types.result_types import ValidationResult, MultipleErrorResult
+E   ModuleNotFoundError: No module named 'result_types'
+=========================== short test summary info ============================
+ERROR tests/unit/test_task_repository.py
+ERROR tests/unit/test_task_validator.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 2 errors during collection !!!!!!!!!!!!!!!!!!!!
+============================== 2 errors in 0.12s ===============================

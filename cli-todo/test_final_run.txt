@@ -1,0 +1,57 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.1, pytest-8.4.0, pluggy-1.6.0 -- /home/codespace/.python/current/bin/python
+cachedir: .pytest_cache
+rootdir: /workspaces/popcorn-bucket/cli-todo
+configfile: pyproject.toml
+plugins: anyio-4.9.0, cov-6.1.1
+collecting ... collected 40 items
+
+tests/unit/test_task_model.py::TestTaskModel::test_task_creation_with_all_fields PASSED [  2%]
+tests/unit/test_task_model.py::TestTaskModel::test_task_is_immutable PASSED [  5%]
+tests/unit/test_task_model.py::TestTaskStatusEnum::test_task_status_values PASSED [  7%]
+tests/unit/test_task_model.py::TestTaskPriorityEnum::test_task_priority_values PASSED [ 10%]
+tests/unit/test_task_model.py::TestTaskOverdueCheck::test_task_without_due_date_not_overdue PASSED [ 12%]
+tests/unit/test_task_model.py::TestTaskOverdueCheck::test_completed_task_not_overdue PASSED [ 15%]
+tests/unit/test_task_model.py::TestTaskOverdueCheck::test_pending_task_past_due_date_is_overdue PASSED [ 17%]
+tests/unit/test_task_model.py::TestTaskOverdueCheck::test_pending_task_before_due_date_not_overdue PASSED [ 20%]
+tests/unit/test_task_model.py::TestTaskOverdueCheck::test_invalid_date_format_returns_error PASSED [ 22%]
+tests/unit/test_task_model.py::TestTaskOperations::test_mark_task_completed PASSED [ 25%]
+tests/unit/test_task_model.py::TestTaskOperations::test_update_task_priority PASSED [ 27%]
+tests/unit/test_task_model.py::TestTaskOperations::test_update_task_due_date PASSED [ 30%]
+tests/unit/test_task_repository.py::TestJsonTaskRepository::test_save_and_load_tasks PASSED [ 32%]
+tests/unit/test_task_repository.py::TestJsonTaskRepository::test_load_nonexistent_file_returns_empty_list PASSED [ 35%]
+tests/unit/test_task_repository.py::TestJsonTaskRepository::test_save_empty_task_list PASSED [ 37%]
+tests/unit/test_task_repository.py::TestJsonTaskRepository::test_backup_creation PASSED [ 40%]
+tests/unit/test_task_repository.py::TestJsonTaskRepository::test_atomic_write_operation PASSED [ 42%]
+tests/unit/test_task_repository.py::TestJsonTaskRepository::test_invalid_json_data_handling PASSED [ 45%]
+tests/unit/test_task_repository.py::TestJsonTaskRepository::test_corrupted_task_data_handling PASSED [ 47%]
+tests/unit/test_task_validator.py::TestTaskTitleValidation::test_valid_title_returns_success PASSED [ 50%]
+tests/unit/test_task_validator.py::TestTaskTitleValidation::test_empty_title_returns_error PASSED [ 52%]
+tests/unit/test_task_validator.py::TestTaskTitleValidation::test_whitespace_only_title_returns_error PASSED [ 55%]
+tests/unit/test_task_validator.py::TestTaskTitleValidation::test_long_title_returns_specific_error PASSED [ 57%]
+tests/unit/test_task_validator.py::TestTaskTitleValidation::test_max_length_title_passes PASSED [ 60%]
+tests/unit/test_task_validator.py::TestDueDateValidation::test_valid_date_format_returns_success PASSED [ 62%]
+tests/unit/test_task_validator.py::TestDueDateValidation::test_invalid_date_format_returns_error PASSED [ 65%]
+tests/unit/test_task_validator.py::TestDueDateValidation::test_empty_date_returns_error PASSED [ 67%]
+tests/unit/test_task_validator.py::TestDueDateValidation::test_invalid_date_values_return_error PASSED [ 70%]
+tests/unit/test_task_validator.py::TestPriorityValidation::test_valid_priorities_return_success PASSED [ 72%]
+tests/unit/test_task_validator.py::TestPriorityValidation::test_case_insensitive_priority_validation PASSED [ 75%]
+tests/unit/test_task_validator.py::TestPriorityValidation::test_invalid_priority_returns_error PASSED [ 77%]
+tests/unit/test_task_validator.py::TestPriorityValidation::test_empty_priority_returns_error PASSED [ 80%]
+tests/unit/test_task_validator.py::TestTaskIdValidation::test_valid_positive_id_returns_success PASSED [ 82%]
+tests/unit/test_task_validator.py::TestTaskIdValidation::test_zero_id_returns_error PASSED [ 85%]
+tests/unit/test_task_validator.py::TestTaskIdValidation::test_negative_id_returns_error PASSED [ 87%]
+tests/unit/test_task_validator.py::TestTaskIdValidation::test_non_numeric_id_returns_error PASSED [ 90%]
+tests/unit/test_task_validator.py::TestTaskIdValidation::test_empty_id_returns_error PASSED [ 92%]
+tests/unit/test_task_validator.py::TestTaskCreationDataValidation::test_valid_data_returns_success PASSED [ 95%]
+tests/unit/test_task_validator.py::TestTaskCreationDataValidation::test_missing_title_returns_error PASSED [ 97%]
+tests/unit/test_task_validator.py::TestTaskCreationDataValidation::test_multiple_errors_collected PASSED [100%]
+
+=============================== warnings summary ===============================
+../../../usr/local/python/3.12.1/lib/python3.12/site-packages/_pytest/config/__init__.py:1474
+  /usr/local/python/3.12.1/lib/python3.12/site-packages/_pytest/config/__init__.py:1474: PytestConfigWarning: Unknown config option: python_paths
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 40 passed, 1 warning in 0.09s =========================

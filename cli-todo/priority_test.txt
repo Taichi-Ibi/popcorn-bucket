@@ -1,0 +1,7 @@
+Priority 'high': valid=True, error=None
+Priority 'HIGH': valid=True, error=None
+Priority 'medium': valid=True, error=None
+Priority 'MEDIUM': valid=True, error=None
+Priority 'low': valid=True, error=None
+Priority 'LOW': valid=True, error=None
+Priority 'invalid': valid=False, error=validation_error: invalid priority 'invalid' (valid: high, medium, low)

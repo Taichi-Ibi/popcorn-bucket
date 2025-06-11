@@ -1,0 +1,129 @@
+CLI TODO Manager - Complete Functionality Demo
+==================================================
+
+=== Help Command ===
+Command: python todo.py --help
+Output:
+usage: todo [-h] {add,list,done,delete,priority,due} ...
+
+CLI TODO Manager - A simple task management tool
+
+positional arguments:
+  {add,list,done,delete,priority,due}
+                        Available commands
+    add                 Create a new task
+    list                Show task list
+    done                Mark task as completed
+    delete              Delete a task
+    priority            Set task priority
+    due                 Set task due date
+
+options:
+  -h, --help            show this help message and exit
+
+
+=== Add Task with Priority and Due Date ===
+Command: python todo.py add Implement user authentication --priority high --due-date 2025-07-01
+Output:
+Task created: ID 1
+
+
+=== Add Task with Priority Only ===
+Command: python todo.py add Write unit tests --priority medium
+Output:
+Task created: ID 2
+
+
+=== Add Simple Task ===
+Command: python todo.py add Update documentation
+Output:
+Task created: ID 3
+
+
+=== List All Tasks ===
+Command: python todo.py list
+Output:
+ID | Title                         | Status  | Priority | Due Date  
+--------------------------------------------------------------------
+1  | Implement user authentication | pending | high     | 2025-07-01
+2  | Write unit tests              | pending | medium   | None      
+3  | Update documentation          | pending | medium   | None      
+
+
+=== Mark Task 2 as Completed ===
+Command: python todo.py done 2
+Output:
+Task 2 marked as completed
+
+
+=== List Pending Tasks ===
+Command: python todo.py list --status pending
+Output:
+ID | Title                         | Status  | Priority | Due Date  
+--------------------------------------------------------------------
+1  | Implement user authentication | pending | high     | 2025-07-01
+3  | Update documentation          | pending | medium   | None      
+
+
+=== List Completed Tasks ===
+Command: python todo.py list --status completed
+Output:
+ID | Title            | Status    | Priority | Due Date
+-------------------------------------------------------
+2  | Write unit tests | completed | medium   | None    
+
+
+=== Set Task 3 Priority to High ===
+Command: python todo.py priority 3 high
+Output:
+Task 3 priority set to high
+
+
+=== Set Task 3 Due Date ===
+Command: python todo.py due 3 2025-06-30
+Output:
+Task 3 due date set to 2025-06-30
+
+
+=== Final Task List ===
+Command: python todo.py list
+Output:
+ID | Title                         | Status    | Priority | Due Date  
+----------------------------------------------------------------------
+1  | Implement user authentication | pending   | high     | 2025-07-01
+2  | Write unit tests              | completed | medium   | None      
+3  | Update documentation          | pending   | high     | 2025-06-30
+
+
+=== Error: Non-existent Task ID ===
+Command: python todo.py done 999
+Error:
+Error: not_found_error: task with ID 999 not found
+
+Exit code: 1
+
+=== Error: Invalid Priority ===
+Command: python todo.py priority 1 urgent
+Error:
+usage: todo priority [-h] id {high,medium,low}
+todo priority: error: argument priority: invalid choice: 'urgent' (choose from 'high', 'medium', 'low')
+
+Exit code: 2
+
+=== Error: Invalid Date Format ===
+Command: python todo.py due 1 invalid-date
+Error:
+Error: validation_error: invalid due date format (use YYYY-MM-DD)
+Usage: todo due <id> <YYYY-MM-DD>
+Example: todo due 1 2025-12-31
+
+Exit code: 1
+
+=== List Overdue Tasks ===
+Command: python todo.py list --overdue
+Output:
+No tasks found.
+
+
+==================================================
+Demo completed! Check the outputs above to verify all functionality works correctly.
