@@ -1,5 +1,5 @@
 from typing import Protocol
-from result_types.result_types import TaskResult, TaskListResult
+from ..result_types.result_types import TaskResult, TaskListResult
 
 
 class TaskStorageProtocol(Protocol):

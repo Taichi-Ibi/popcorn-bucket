@@ -1,8 +1,8 @@
 from datetime import datetime
-from result_types.result_types import TaskResult, TaskListResult, ValidationResult
-from models.task import Task, TaskStatus, TaskPriority, mark_task_completed, update_task_priority, update_task_due_date
-from validators.task_validator import validate_task_title, validate_due_date_format, validate_priority_value, validate_task_id
-from repositories.task_repository import JsonTaskRepository
+from ..result_types.result_types import TaskResult, TaskListResult, ValidationResult
+from ..models.task import Task, TaskStatus, TaskPriority, mark_task_completed, update_task_priority, update_task_due_date
+from ..validators.task_validator import validate_task_title, validate_due_date_format, validate_priority_value, validate_task_id
+from ..repositories.task_repository import JsonTaskRepository
 
 
 class TaskService:
@@ -297,7 +297,7 @@ class TaskService:
         for task in tasks:
             if task.status == TaskStatus.PENDING and task.due_date:
                 try:
-                    from models.task import is_task_overdue
+                    from ..models.task import is_task_overdue
                     is_overdue, check_error = is_task_overdue(task, current_date)
                     if check_error:
                         return None, check_error
@@ -321,6 +321,6 @@ def create_task_service(repository: JsonTaskRepository | None = None) -> TaskSer
     if repository:
         return TaskService(repository)
     
-    from repositories.task_repository import create_task_repository
+    from ..repositories.task_repository import create_task_repository
     default_repository = create_task_repository()
     return TaskService(default_repository)

@@ -1,8 +1,8 @@
 import argparse
 import sys
 from typing import NoReturn
-from services.task_service import create_task_service
-from models.task import Task
+from ..services.task_service import create_task_service
+from ..models.task import Task
 
 
 def print_error(message: str) -> None:

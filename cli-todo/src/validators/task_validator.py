@@ -1,5 +1,5 @@
-from result_types.result_types import ValidationResult, MultipleErrorResult
-from models.task import TaskPriority
+from ..result_types.result_types import ValidationResult, MultipleErrorResult
+from ..models.task import TaskPriority
 
 
 def validate_task_title(title: str) -> ValidationResult:

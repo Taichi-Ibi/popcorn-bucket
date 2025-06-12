@@ -1,9 +1,9 @@
 import json
 from pathlib import Path
 from typing import Any
-from result_types.result_types import TaskResult, TaskListResult
-from models.task import Task, TaskStatus, TaskPriority
-from protocols.storage_protocol import TaskStorageProtocol
+from ..result_types.result_types import TaskResult, TaskListResult
+from ..models.task import Task, TaskStatus, TaskPriority
+from ..protocols.storage_protocol import TaskStorageProtocol
 
 
 class JsonTaskRepository(TaskStorageProtocol):
