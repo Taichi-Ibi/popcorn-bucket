@@ -1,9 +1,0 @@
-✅ Validator import successful
-✅ Task validation successful
-✅ Model import successful
-✅ Task created: Test task
-✅ Repository import successful
-✅ Service import successful
-✅ Service created
-✅ CLI import successful
-🎉 All imports and basic functionality working!
